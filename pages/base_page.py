@@ -3,7 +3,8 @@ import time
 from selenium.common.exceptions import NoSuchElementException, NoAlertPresentException, TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-
+from .locators import BasePageLocators as BPL
+#from .login_page import LoginPage
 
 class BasePage():
 
@@ -22,6 +23,20 @@ class BasePage():
             return False
         return True
             
+    def go_to_login_page(self):
+        link = self.browser.find_element(*BPL.LOGIN_LINK)
+        link.click()
+        #return LoginPage(self.browser, self.browser.current_url)
+
+    def should_be_login_link(self):
+        assert self.browser.find_element(*BPL.LOGIN_LINK), 'Login link is not presented'
+
+    def should_be_language_choose_field(self):
+        assert self.browser.find_element(*BPL.LANGUAGE_CHOISE_FIELD),'Cant find field to choose language'
+
+    def should_be_go_button(self):
+        assert self.browser.find_element(*BPL.LANGUAGE_CHOISE_SUBMIT_BUTTON), 'Cant find a button to submit language change'
+
     def solve_quiz_and_get_code(self):
         alert = self.browser.switch_to.alert
         x = alert.text.split(" ")[2]

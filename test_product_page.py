@@ -16,8 +16,18 @@ def test_guest_can_add_prduct_to_basket(browser):
     page.book_price_check()
     page.book_title_check()
 
+def test_guest_can_see_login_link(browser):
+    page = ProductPage(browser, link)
+    page.open()
+    page.should_be_login_link()
+
+def test_guest_can_go_to_login_page(browser):
+    page =ProductPage(browser, link)
+    page.open()
+    page.go_to_login_page()
+
 @pytest.mark.xfail(reason="I knew it had to fell")
-def test_guest_cant_see_success_message_after_adding_product_to_baskent(browser):
+def test_guest_cant_see_success_message_after_adding_product_to_basket(browser):
     page = ProductPage(browser, link)
     page.open()
     page.add_product_to_basket()

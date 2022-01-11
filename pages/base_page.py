@@ -37,6 +37,13 @@ class BasePage():
     def should_be_go_button(self):
         assert self.browser.find_element(*BPL.LANGUAGE_CHOISE_SUBMIT_BUTTON), 'Cant find a button to submit language change'
 
+    def should_be_basket_button(self):
+        assert self.browser.find_element(*BPL.BASKET_BUTTON), 'Cant find a basket button'
+     
+    def go_to_basket(self):
+        basket_button = self.browser.find_element(*BPL.BASKET_BUTTON)        
+        basket_button.click()   
+
     def solve_quiz_and_get_code(self):
         alert = self.browser.switch_to.alert
         x = alert.text.split(" ")[2]

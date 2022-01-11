@@ -4,6 +4,12 @@ class BasePageLocators:
     LOGIN_LINK = (By.CSS_SELECTOR, '#login_link')
     LANGUAGE_CHOISE_FIELD = (By.CSS_SELECTOR, "#language_selector [name='language']")
     LANGUAGE_CHOISE_SUBMIT_BUTTON = (By.CSS_SELECTOR, '#language_selector button') 
+    BASKET_BUTTON = (By.CSS_SELECTOR, '.page_inner a.btn-default')
+
+class BasketPageLocators:
+    FIRST_BASKET_ITEM = (By.CSS_SELECTOR, '.basket-items #id_form-0-idll')
+    EMPTY_BASKET_MESSAGE = (By.CSS_SELECTOR, "#content_inner p:nth-child(1)")
+
 
 class MainPageLocators(BasePageLocators):
     pass

@@ -5,6 +5,7 @@ class BasePageLocators:
     LANGUAGE_CHOISE_FIELD = (By.CSS_SELECTOR, "#language_selector [name='language']")
     LANGUAGE_CHOISE_SUBMIT_BUTTON = (By.CSS_SELECTOR, '#language_selector button') 
     BASKET_BUTTON = (By.CSS_SELECTOR, '.page_inner a.btn-default')
+    USER_ICON = (By.CSS_SELECTOR, ".icon-user")
 
 class BasketPageLocators:
     FIRST_BASKET_ITEM = (By.CSS_SELECTOR, '.basket-items #id_form-0-idll')
@@ -17,6 +18,10 @@ class MainPageLocators(BasePageLocators):
 class LoginPageLocators:
     LOGIN_FORM = (By.CSS_SELECTOR, "#login_form") 
     REGISTER_FORM = (By.CSS_SELECTOR,"#register_form")
+    REGISTRATION_EMAIL_FIELD = (By.CSS_SELECTOR, "#id_registration-email")
+    REGISTRATION_PASSWORD_1 = (By.CSS_SELECTOR, "#id_registration-password1")
+    REGISTRATION_PASSWORD_2 = (By.CSS_SELECTOR, "#id_registration-password2")
+    REGISTRATION_BUTTON = (By.NAME, "registration_submit")
 
 class ProductPageLocators:
     ADD_TO_BASKET_BUTTON = (By.CSS_SELECTOR, "#add_to_basket_form .btn-add-to-basket")

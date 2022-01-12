@@ -10,7 +10,7 @@ link = 'http://selenium1py.pythonanywhere.com/catalogue/the-shellcoders-handbook
 
 #@pytest.mark.parametrize('link', links)
 @pytest.mark.need_review
-def test_guest_can_add_prduct_to_basket(browser):
+def test_guest_can_add_product_to_basket(browser):
     page = ProductPage(browser, link)
     page.open()
     page.should_be_add_to_basket_button()

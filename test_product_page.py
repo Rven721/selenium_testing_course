@@ -32,7 +32,6 @@ def test_guest_can_go_to_login_page_from_product_page(browser):
     page.go_to_login_page()
 
 @pytest.mark.xfail(reason="I knew it had to fell")
-@pytest.mark.need_review
 def test_guest_cant_see_success_message_after_adding_product_to_basket(browser):
     page = ProductPage(browser, link)
     page.open()
@@ -51,6 +50,7 @@ def test_message_dissapeared_after_adding_product_to_basket(browser):
     page.add_product_to_basket()
     page.success_message_is_disapeared()
 
+@pytest.mark.need_review
 def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
     page = ProductPage(browser, link)
     page.open()
@@ -62,7 +62,7 @@ def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
 
 
 @pytest.mark.registered_user
-class TestUserAddToBasketFromProductPage:
+class TestUserAddProductToBasketFromProductPage:
     @pytest.fixture(scope='function', autouse=True)
     def setup(self, browser):
         email = str(time.time())+'@fakeemail.org'
